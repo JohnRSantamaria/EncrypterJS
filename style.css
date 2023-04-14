@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+/******reset CSS*****/
+:root {
+  --main-font: 'Inter', sans-serif;
+  --font-size: 16px;
+  --main-color: #0A3871;
+  --second-color: #F3F5FC;
+  --shadows: 0px 10px 15px -3px rgba(0,0,0,0.1);
+  --container-width: 1200px;
+}
+html {
+  box-sizing: border-box;
+  /*para que cuente desde el borde de la pagina*/
+  font-family: var(--main-font);
+  font-size: var(--font-size);
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background-color: var(--second-color);
+  /*Todo lo que sobresalga se oculte y no genere la barra de desplazamiento*/
+}
+
+img {
+  max-width: 100%;
+  /*Que ocupe toda la pantalla las imagenes*/
+  height: auto;
+}
+
+/*** Encriptador ***/
+.container
+{
+  max-width: 2000px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 1rem;
+  background-color: var(--second-color);
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: hidden;
+}
+.header
+{ 
+  width: 100%;
+  height: 96px;
+}
+.text-container
+{
+  width: 100%;
+  min-height: calc(350px - 96px);
+}
+.text-container textarea
+{
+  resize: none;
+  width: 100%;
+  height: 100%;
+}
+.text-container textarea
+{
+  background-color: var(--second-color);
+  border: none;
+  color: var(--main-color);
+  font-family: var(--main-font);
+  font-weight: 400;
+  font-size: 32px;
+}
+.text-container textarea:focus
+{
+  border: #F3F5FC;
+  outline: none;
+}
+.text-container textarea::placeholder
+{
+  color: var(--main-color);
+  font-family: var(--main-font);
+  font-size: 32px;
+  font-weight: 400;
+}
+.warning
+{
+  margin-top: 3rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px; 
+  width: 100%;
+  height: 16px;
+  user-select: none;
+}
+.buttons
+{
+  position: relative;
+  width: 100%;
+  height: 158px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px; 
+  margin: 1rem 0;
+}
+.buttons :first-child
+{
+  width: 100%;
+  height: 67px;
+  background-color: var(--main-color);
+  border-radius: 24px;
+  color: var(--second-color);
+  font-size: var(--font-size);
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+.buttons :first-child:hover
+{
+  box-shadow: var(--shadows);
+  position: relative;
+  top: -1px;
+}
+.buttons :first-child:active
+{
+  position: relative;
+  top: 1px;
+}
+.buttons :last-child
+{
+  width: 100%;
+  height: 67px;
+  background-color: var(--second-color);
+  border-radius: 24px;
+  color: var(--main-color);
+  font-size: var(--font-size);
+  text-align: center;
+  border: 1px solid var(--main-color);
+  cursor: pointer;
+}
+.buttons :last-child:hover
+{
+  box-shadow: var(--shadows);
+  position: relative;
+  top: -1px;
+}
+.buttons :last-child:active
+{
+  position: relative;
+  top: 1px;
+}
+.encrypted-message
+{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  border-radius: 32px;
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+  margin-top: 32px;
+}
+.no-message
+{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  
+}
+.no-message img
+{
+  display: none;
+}
+.message-encrypted
+{
+  color: #343A40;
+  font-weight: 700;
+  text-align: center;
+}
+.message-encrypted p
+{
+  font-weight: 400;
+}
+.message
+{
+  display: none;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;  
+}
+.message button
+{
+  width: 100%;
+  height: 67px;
+  border: 1px solid #0A3871;
+  border-radius: 24px;   
+  background-color: transparent;
+  font-family: var(--main-font); 
+  font-size: var(--font-size);
+  color: var(--main-color);
+}
+
+.message-decrypted
+{  
+  width: 100%; 
+  margin-bottom: 32px;
+}
+.message-decrypted textarea
+{
+  border: none;
+  min-width: 100%;
+  min-height: 56px;
+  resize:vertical;
+  font-family: var(--main-font);
+  font-size: 24px;
+  color: #495057;
+  outline: none;
+  user-select: none;
+}
+
+/* Responsive **/
+
+@media only screen and (min-width: 760px) and (max-width: 1440px)
+{
+  .container
+  {
+    padding: 40px;
+  }
+  .text-container
+  {    
+    min-height: calc(470px - 96px);
+  }
+  .buttons
+  {
+    flex-direction: row;
+    height: 70px;
+  }
+
+}
+
+/* Large devices*/
+
+@media only screen and (min-width: 1441px)
+{
+  .container
+  {
+    flex-direction: row;
+    padding: 40px;
+  }
+  .encryper
+  {
+    display: flex;
+    flex-flow: column;
+    width: calc(100% - 80px);
+    align-items: center;
+    height: calc(100vh - 80px );
+  }
+  .encryper .container-encryper
+  {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    height: 100%;
+    width: 60%;
+  }
+  .buttons{ 
+    flex-direction: row;
+    height: 70px;
+    justify-content: center;
+  }
+  .text-container
+  {
+    width: 100%;
+    height: 100%;
+  }
+  .no-message img
+  {
+    display: flex;
+  }
+  .encrypted-message
+  {
+    position: relative;
+    top: 0;
+    left: 0;
+    max-width: 400px;
+    max-height: 100%;
+  }
+  .message
+  {
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+  }
+  .message-decrypted
+  {
+    height: 100%; 
+    width: 100%;
+  }
+  .message-decrypted textarea
+  {
+    width: 100%;
+    height: 100%;
+    resize: none;
+  }
+}

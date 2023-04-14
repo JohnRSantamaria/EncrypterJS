@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encriptador</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="encryper">
+
+      <header class="header">
+        <img src="/utils/logo.svg" alt="Logo Alura">
+      </header>
+
+      <div class="container-encryper">
+
+        <section class="text-container">
+          <textarea class="text-container" placeholder="Ingrese el texto aqui" id="textContainer"></textarea>
+        </section>
+
+        <div class="container-warning">
+          <section class="warning"><img src="/utils/exclamation-mark.svg" alt="exclamation mark">
+            Solo letras minúsculas y sin acentos
+          </section>
+          <section class="buttons">
+            <button id="encrypt">Encriptar</button>
+            <button id="decrypt">Desencriptar</button>
+          </section>
+        </div>
+      </div>
+
+    </div>
+    <div class="encrypted-message">
+      <div class="no-message" id="noMessage">
+        <img src="/utils/Muñeco.svg" alt="No Mesage">
+        <section class="message-encrypted">
+          <h1>Ningún mensaje fue encontrado</h1>
+          <p>Ingresa el texto que desees encriptar o desencriptar </p>
+        </section>
+      </div>
+      <div class="message" id="message">
+        <section class="message-decrypted">
+          <textarea id="decryptedMessage" readonly></textarea>
+        </section>
+        <button id="copy">Copiar</button>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="index.js"></script>
+
+</html>
